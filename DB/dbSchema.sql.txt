@@ -1,0 +1,81 @@
+<pre>
+SET FOREIGN_KEY_CHECKS = 0;
+drop table userBookmark;
+drop table user;
+drop table propertyDetail;
+drop table property;
+drop table regularColumn;
+drop table domain;
+SET FOREIGN_KEY_CHECKS = 1;
+--
+--
+create table domain (
+  domainName varchar(32),
+  factTableName varchar(32),
+  primary key (domainName)
+);
+insert into domain values ('Colleges','collegeFactTable');
+insert into domain values ('Automobiles','autoFactTable');
+--
+--
+create table regularColumn (
+  domainName varchar(32),
+  columnName varchar(32),
+  primary key (domainName,columnName)
+);
+insert into regularColumn values ('Colleges','name');
+insert into regularColumn values ('Colleges','url');
+insert into regularColumn values ('Automobiles','autoID');
+insert into regularColumn values ('Automobiles','url');
+--
+--
+create table property (
+  domainName varchar(32),
+  propertyName varchar(32),
+  propertyQuestion  varchar(256),
+  displayorder tinyint,
+  propertyDisplayType varchar(16), -- radio, checkbox, singleselect, multiselect
+  primary key (domainName,propertyName),
+  foreign key (domainName) references domain(domainName)
+);
+--
+--
+create table propertyDetail (
+  domainName varchar(32),
+  propertyName varchar(32),
+  allowedValue varchar(64),
+  allowedValueCode int,
+  primary key (domainName,propertyName,allowedValue),
+  foreign key (domainName,propertyName) references property(domainName,propertyName)
+);
+--
+--
+create table user (
+  userid    varchar(16),
+  primary key (userid)
+);
+insert into user values ('raj');
+--
+--
+create table userBookmark (
+  userid    varchar(16),
+  domainName varchar(32),
+  bname varchar(16),
+  bookmark  varchar(512),
+  primary key (userid,domainName,bname),
+  foreign key (domainName) references domain(domainName),
+  foreign key (userid) references user(userid)
+);
+--
+--
+insert into userBookmark values ('raj','Colleges','fav1','publicOrPrivate=1,region=1,state=1,state=2');
+insert into userBookmark values ('raj','Colleges','fav2','publicOrPrivate=1,region=1,state=1');
+insert into userBookmark values ('raj','Colleges','fav3','publicOrPrivate=2,region=2,state=1,state=3');
+insert into userBookmark values ('raj','Colleges','fav4','publicOrPrivate=2,region=2,state=1,state=3');
+insert into userBookmark values ('raj','Colleges','favorite5','publicOrPrivate=2,region=2,state=1,state=3');
+--
+--
+source collegeMetaData.sql
+source autoMetaData.sql
+source collegeData.sql
+</pre>

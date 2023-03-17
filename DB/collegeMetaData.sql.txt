@@ -1,0 +1,153 @@
+<pre>
+delete from propertyDetail where domainName = 'Colleges';
+delete from property where domainName = 'Colleges';
+delete from userBookmarks where domainName = 'Colleges';
+--
+--
+insert into property values 
+  ('Colleges','publicOrPrivate','Do you like to attend a public or private university?',1,'radio');
+insert into property values 
+  ('Colleges','region','What region of the country do you prefer?',2,'checkbox');
+insert into property values 
+  ('Colleges','state','What state of the country do you prefer?',3,'multiselect');
+insert into property values 
+  ('Colleges','focus','Are you interested in schools with a specific focus?',4,'checkbox');
+insert into property values 
+  ('Colleges','setting','In what kind of setting are you interested?',5,'checkbox');
+insert into property values 
+  ('Colleges','collegeType','What type of college are you interested in?',6,'checkbox');
+insert into property values 
+  ('Colleges','collegeSize','What size college are you interested in?',7,'radio');
+insert into property values 
+  ('Colleges','SATAvg','What SAT Average school are you looking for?',8,'radio');
+insert into property values 
+  ('Colleges','collegeRanking','What ranking of schools are you searching for?',9,'radio');
+insert into property values 
+  ('Colleges','sportsTradition','Is collegiate sports tradition of interest to you?',10,'radio');
+insert into property values 
+  ('Colleges','studentFacultyRatio','How do you feel about student faculty ratios?',11,'radio');
+insert into property values 
+  ('Colleges','cost','What tuitions are you comfortable with?',12,'radio');
+insert into property values 
+  ('Colleges','collegeAge','Is college age of any concern to you?',13,'radio');
+--
+--
+insert into propertyDetail values ('Colleges','publicOrPrivate','Public',1);
+insert into propertyDetail values ('Colleges','publicOrPrivate','Private',2);
+--
+insert into propertyDetail values ('Colleges','region','Southeast',1);
+insert into propertyDetail values ('Colleges','region','Midwest',2);
+insert into propertyDetail values ('Colleges','region','East',3);
+insert into propertyDetail values ('Colleges','region','West',4);
+--
+insert into propertyDetail values ('Colleges','state','Alabama',1);
+insert into propertyDetail values ('Colleges','state','Arizona',2);
+insert into propertyDetail values ('Colleges','state','California',3);
+insert into propertyDetail values ('Colleges','state','Florida',4);
+insert into propertyDetail values ('Colleges','state','Georgia',5);
+insert into propertyDetail values ('Colleges','state','Illinois',6);
+insert into propertyDetail values ('Colleges','state','Indiana',7);
+insert into propertyDetail values ('Colleges','state','Iowa',8);
+insert into propertyDetail values ('Colleges','state','Kansas',9);
+insert into propertyDetail values ('Colleges','state','Kentucky',10);
+insert into propertyDetail values ('Colleges','state','Louisiana',11);
+insert into propertyDetail values ('Colleges','state','Maryland',12);
+insert into propertyDetail values ('Colleges','state','Michigan',13);
+insert into propertyDetail values ('Colleges','state','Minnesota',14);
+insert into propertyDetail values ('Colleges','state','Missouri',15);
+insert into propertyDetail values ('Colleges','state','Nevada',16);
+insert into propertyDetail values ('Colleges','state','North Carolina',17);
+insert into propertyDetail values ('Colleges','state','New Jersey',18);
+insert into propertyDetail values ('Colleges','state','New Mexico',19);
+insert into propertyDetail values ('Colleges','state','New York',20);
+insert into propertyDetail values ('Colleges','state','Ohio',21);
+insert into propertyDetail values ('Colleges','state','Pennsylvania',22);
+insert into propertyDetail values ('Colleges','state','South Carolina',23);
+insert into propertyDetail values ('Colleges','state','South Dakota',24);
+insert into propertyDetail values ('Colleges','state','Tennessee',25);
+insert into propertyDetail values ('Colleges','state','Texas',26);
+insert into propertyDetail values ('Colleges','state','Utah',27);
+insert into propertyDetail values ('Colleges','state','Vermont',28);
+insert into propertyDetail values ('Colleges','state','Virginia',29);
+insert into propertyDetail values ('Colleges','state','Washington',30);
+insert into propertyDetail values ('Colleges','state','West Virginia',31);
+insert into propertyDetail values ('Colleges','state','Wisconsin',32);
+insert into propertyDetail values ('Colleges','state','Wyoming',33);
+--
+insert into propertyDetail values ('Colleges','focus','Men Only',1);
+insert into propertyDetail values ('Colleges','focus','Women Only',2);
+insert into propertyDetail values ('Colleges','focus','Military',3);
+insert into propertyDetail values ('Colleges','focus','Religious',4);
+--
+insert into propertyDetail values ('Colleges','setting','Large City',1);
+insert into propertyDetail values ('Colleges','setting','Small City',2);
+insert into propertyDetail values ('Colleges','setting','Large Town',3);
+insert into propertyDetail values ('Colleges','setting','Small Town',4);
+insert into propertyDetail values ('Colleges','setting','Rural Area',5);
+--
+insert into propertyDetail values ('Colleges','collegeType','Liberal Arts',1);
+insert into propertyDetail values ('Colleges','collegeType','Medical',2);
+insert into propertyDetail values ('Colleges','collegeType','Law',3);
+insert into propertyDetail values ('Colleges','collegeType','Engineering',4);
+--
+insert into propertyDetail values ('Colleges','collegeSize','Large (>20000 students)',1);
+insert into propertyDetail values ('Colleges','collegeSize', 'Medium (5000-20000 students)',2);
+insert into propertyDetail values ('Colleges','collegeSize','Small (<5000 students)',3);
+--
+insert into propertyDetail values ('Colleges','SATAvg','>1400',1);
+insert into propertyDetail values ('Colleges','SATAvg','1200-1400',2);
+insert into propertyDetail values ('Colleges','SATAvg','1000-1200',3);
+insert into propertyDetail values ('Colleges','SATAvg','800-1000',4);
+insert into propertyDetail values ('Colleges','SATAvg','<800',5);
+--
+insert into propertyDetail values ('Colleges','collegeRanking','Top 20',1);
+insert into propertyDetail values ('Colleges','collegeRanking','20-50',2);
+insert into propertyDetail values ('Colleges','collegeRanking','50-100',3);
+insert into propertyDetail values ('Colleges','collegeRanking','100-200',4);
+insert into propertyDetail values ('Colleges','collegeRanking','Others',5);
+--
+insert into propertyDetail values ('Colleges','sportsTradition','Excellent (won major championships)',1);
+insert into propertyDetail values ('Colleges','sportsTradition','Good (competitive)',2);
+insert into propertyDetail values ('Colleges','sportsTradition','Poor (not competitive)',3);
+--
+insert into propertyDetail values ('Colleges','studentFacultyRatio','Small classes (under 10:1)',1);
+insert into propertyDetail values ('Colleges','studentFacultyRatio','Medium classes (10:1 to 20:1)',2);
+insert into propertyDetail values ('Colleges','studentFacultyRatio','Larger classes (above 20:1)',3);
+--
+insert into propertyDetail values ('Colleges','cost','Upto $5000',1);
+insert into propertyDetail values ('Colleges','cost','Upto $10000',2);
+insert into propertyDetail values ('Colleges','cost','Upto $15000',3);
+insert into propertyDetail values ('Colleges','cost','Upto $20000',4);
+insert into propertyDetail values ('Colleges','cost','Above $30000',5);
+--
+insert into propertyDetail values ('Colleges','collegeAge','Old school - Established over 100 yrs ago',1);
+insert into propertyDetail values ('Colleges','collegeAge','Established over 50 yrs ago',2);
+insert into propertyDetail values ('Colleges','collegeAge','New College - establish in past 50 yrs',3);
+--
+--
+SET FOREIGN_KEY_CHECKS = 0;
+drop table collegeFactTable;
+SET FOREIGN_KEY_CHECKS = 1;
+--
+--
+create table collegeFactTable (
+  name varchar(64),
+  url varchar(256),
+  publicOrPrivate int,
+  region int,
+  state int,
+  focus int,
+  setting int,
+  collegeType int,
+  collegeSize int,
+  SATAvg int,
+  collegeRanking int,
+  sportsTradition int,
+  studentFacultyRatio int,
+  cost int,
+  collegeAge int,
+  primary key (name)
+);
+--
+--
+</pre>

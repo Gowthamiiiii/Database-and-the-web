@@ -1,0 +1,132 @@
+<pre>
+delete from propertyDetail where domainName = 'Automobiles';
+delete from property where domainName = 'Automobiles';
+delete from userBookmarks where domainName = 'Automobiles';
+--
+--
+insert into property values 
+  ('Automobiles','usedOrNew','Which cars are you interested in?',1,'checkbox');
+insert into property values 
+  ('Automobiles','bodyStyle','Which body styles are you considering?',2,'multiselect');
+insert into property values 
+  ('Automobiles','make','Which manufacturer are you considering?',3,'multiselect');
+insert into property values 
+  ('Automobiles','age','What age cars are you considering?',4,'radio');
+insert into property values 
+  ('Automobiles','priceRange','What price range are you looking for?',5,'radio');
+insert into property values 
+  ('Automobiles','sellerType','Which sellers do you prefer?',6,'radio');
+insert into property values 
+  ('Automobiles','mileage','What mileage are you looking for?',7,'radio');
+insert into property values 
+  ('Automobiles','color','What exterior color do you prefer?',8,'select');
+insert into property values 
+  ('Automobiles','sunroof','Do you need a Sunroof?',9,'radio');
+insert into property values 
+  ('Automobiles','luxurySeats','Do you need Luxury Seats?',10,'radio');
+insert into property values 
+  ('Automobiles','transmission','What transmission do you prefer?',11,'radio');
+insert into property values 
+  ('Automobiles','fuelType','What fuel type do you prefer?',12,'checkbox');
+--
+--
+insert into propertyDetail values ('Automobiles','usedOrNew','New Cars',1);
+insert into propertyDetail values ('Automobiles','usedOrNew','Used Cars',2);
+insert into propertyDetail values ('Automobiles','usedOrNew','Certified Cars',3);
+--
+insert into propertyDetail values ('Automobiles','bodyStyle','Convertible',1);
+insert into propertyDetail values ('Automobiles','bodyStyle','Coupe',2);
+insert into propertyDetail values ('Automobiles','bodyStyle','Hatchback',3);
+insert into propertyDetail values ('Automobiles','bodyStyle','Sedan',4);
+insert into propertyDetail values ('Automobiles','bodyStyle','SUV',5);
+insert into propertyDetail values ('Automobiles','bodyStyle','Truck',6);
+insert into propertyDetail values ('Automobiles','bodyStyle','Van',7);
+insert into propertyDetail values ('Automobiles','bodyStyle','Wagon',8);
+--
+insert into propertyDetail values ('Automobiles','make','Acura',1);
+insert into propertyDetail values ('Automobiles','make','Audi',2);
+insert into propertyDetail values ('Automobiles','make','Bentley',3);
+insert into propertyDetail values ('Automobiles','make','BMW',4);
+insert into propertyDetail values ('Automobiles','make','Ford',5);
+insert into propertyDetail values ('Automobiles','make','Honda',6);
+insert into propertyDetail values ('Automobiles','make','Hyundai',7);
+insert into propertyDetail values ('Automobiles','make','Mazda',8);
+insert into propertyDetail values ('Automobiles','make','Nissan',9);
+insert into propertyDetail values ('Automobiles','make','Saab',10);
+insert into propertyDetail values ('Automobiles','make','Toyota',11);
+insert into propertyDetail values ('Automobiles','make','Volkswagen',12);
+--
+insert into propertyDetail values ('Automobiles','age','Less than 2 years old',1);
+insert into propertyDetail values ('Automobiles','age','Between 2 and 5 years old',2);
+insert into propertyDetail values ('Automobiles','age','Between 5 and 10 years old',3);
+insert into propertyDetail values ('Automobiles','age','More than 10 years old',4);
+--
+insert into propertyDetail values ('Automobiles','priceRange','Less than $12,000',1);
+insert into propertyDetail values ('Automobiles','priceRange','Between $12,000 and $18,000',2);
+insert into propertyDetail values ('Automobiles','priceRange','Between $18,000 and $30,000',3);
+insert into propertyDetail values ('Automobiles','priceRange','More than $30,000',4);
+--
+insert into propertyDetail values ('Automobiles','sellerType','Dealers',1);
+insert into propertyDetail values ('Automobiles','sellerType','Private Seller',2);
+--
+insert into propertyDetail values ('Automobiles','mileage','Less than 15,000',1);
+insert into propertyDetail values ('Automobiles','mileage','Less than 30,000',2);
+insert into propertyDetail values ('Automobiles','mileage','Less than 45,000',3);
+insert into propertyDetail values ('Automobiles','mileage','Less than 60,000',4);
+insert into propertyDetail values ('Automobiles','mileage','More than 60,000',5);
+--
+insert into propertyDetail values ('Automobiles','color','Beige',1);
+insert into propertyDetail values ('Automobiles','color','Black',2);
+insert into propertyDetail values ('Automobiles','color','Blue',3);
+insert into propertyDetail values ('Automobiles','color','Brown',4);
+insert into propertyDetail values ('Automobiles','color','Burgundy',5);
+insert into propertyDetail values ('Automobiles','color','Charcoal',6);
+insert into propertyDetail values ('Automobiles','color','Gold',7);
+insert into propertyDetail values ('Automobiles','color','Gray',8);
+insert into propertyDetail values ('Automobiles','color','Green',9);
+insert into propertyDetail values ('Automobiles','color','Orange',10);
+insert into propertyDetail values ('Automobiles','color','Pink',11);
+insert into propertyDetail values ('Automobiles','color','Red',12);
+insert into propertyDetail values ('Automobiles','color','Silver',13);
+insert into propertyDetail values ('Automobiles','color','Tan',14);
+insert into propertyDetail values ('Automobiles','color','Turquoise',15);
+insert into propertyDetail values ('Automobiles','color','White',16);
+--
+insert into propertyDetail values ('Automobiles','sunroof','Yes',1);
+insert into propertyDetail values ('Automobiles','sunroof','No',2);
+--
+insert into propertyDetail values ('Automobiles','luxurySeats','Yes',1);
+insert into propertyDetail values ('Automobiles','luxurySeats','No',2);
+--
+insert into propertyDetail values ('Automobiles','transmission','Automatic',1);
+insert into propertyDetail values ('Automobiles','transmission','Manual',2);
+--
+insert into propertyDetail values ('Automobiles','fuelType','Alternative',1);
+insert into propertyDetail values ('Automobiles','fuelType','Gasoline',2);
+insert into propertyDetail values ('Automobiles','fuelType','Diesel',3);
+--
+--
+SET FOREIGN_KEY_CHECKS = 0;
+drop table autoFactTable;
+SET FOREIGN_KEY_CHECKS = 1;
+--
+create table autoFactTable (
+  autoID varchar(64),
+  url varchar(256), -- can be a URL to a description page including a photo
+  usedOrNew int,
+  bodyStyle int,
+  make int,
+  age int,
+  priceRange int,
+  sellerType int,
+  mileage int,
+  color int,
+  sunroof int,
+  luxurySeats int,
+  transmission int,
+  fuelType int,
+  primary key (autoID)
+);
+--
+--
+</pre>
